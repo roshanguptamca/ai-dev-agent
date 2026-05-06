@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-dev-agent"
+version = "0.1.0"
+description = "AI-powered local development agent that converts requirements from Jira, PDFs, DOCX, and code context into validated GitHub pull requests."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+authors = [
+  { name = "Roshan Gupta" }
+]
+keywords = [
+  "ai",
+  "openai",
+  "developer-tools",
+  "github",
+  "jira",
+  "rag",
+  "code-generation",
+  "automation",
+  "python"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Code Generators",
+  "Topic :: Software Development :: Version Control :: Git",
+  "Topic :: Utilities"
+]
+dependencies = [
+  "openai>=1.0.0",
+  "python-dotenv>=1.0.0",
+  "requests>=2.31.0",
+  "gitpython>=3.1.40"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+  "ruff>=0.4.0",
+  "build>=1.2.0",
+  "twine>=5.0.0"
+]
+rag = [
+  "faiss-cpu>=1.8.0"
+]
+docs = [
+  "mkdocs>=1.6.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/roshanguptamca/ai-dev-agent"
+Repository = "https://github.com/roshanguptamca/ai-dev-agent"
+Issues = "https://github.com/roshanguptamca/ai-dev-agent/issues"
+
+[project.scripts]
+ai-dev-agent = "ai_dev_agent.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ai_dev_agent"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
