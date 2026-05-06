@@ -4,14 +4,16 @@ build-backend = "hatchling.build"
 
 [project]
 name = "smartpr-ai"
-version = "0.1.0"
+version = "0.2.1"
 description = "AI-powered local development agent that converts requirements from Jira, PDFs, DOCX, and code context into validated GitHub pull requests."
 readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"
+
 authors = [
   { name = "Roshan Gupta" }
 ]
+
 keywords = [
   "ai",
   "openai",
@@ -23,6 +25,7 @@ keywords = [
   "automation",
   "python"
 ]
+
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Environment :: Console",
@@ -35,11 +38,14 @@ classifiers = [
   "Topic :: Software Development :: Version Control :: Git",
   "Topic :: Utilities"
 ]
+
 dependencies = [
   "openai>=1.0.0",
   "python-dotenv>=1.0.0",
   "requests>=2.31.0",
-  "gitpython>=3.1.40"
+  "gitpython>=3.1.40",
+  "pypdf>=4.0.0",
+  "python-docx>=1.1.0"
 ]
 
 [project.optional-dependencies]
@@ -49,9 +55,11 @@ dev = [
   "build>=1.2.0",
   "twine>=5.0.0"
 ]
+
 rag = [
   "faiss-cpu>=1.8.0"
 ]
+
 docs = [
   "mkdocs>=1.6.0"
 ]
