@@ -3,7 +3,7 @@ requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ai-dev-agent"
+name = "smartpr-ai"
 version = "0.1.0"
 description = "AI-powered local development agent that converts requirements from Jira, PDFs, DOCX, and code context into validated GitHub pull requests."
 readme = "README.md"
@@ -62,7 +62,7 @@ Repository = "https://github.com/roshanguptamca/ai-dev-agent"
 Issues = "https://github.com/roshanguptamca/ai-dev-agent/issues"
 
 [project.scripts]
-ai-dev-agent = "ai_dev_agent.cli:main"
+quick-pr = "ai_dev_agent.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/ai_dev_agent"]
